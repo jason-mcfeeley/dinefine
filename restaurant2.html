@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="stylesheet" type="text/css" href="restaurantcss.css">
+	<script src="socket.io/socket.io.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+	</head>
+	
+	<body>
+		
+		 
+	 <div id="logo">
+     <img src="logodf.png">
+     <p>The Finer Way To Dine</p>
+     </div>
+		<div id="main">
+		
+		</div>
+		
+		
+	</body>
+	<script>
+		
+		var socket = io();
+		//io.on('connection', function(socket){
+  			socket.on('R2S', function(msg){
+    			$("#main").append("<div class='serverRequest' onClick='$(this).hide()'><p> Table "+msg.for+" Requests their server<p></div>")
+  			});
+		socket.on('R2C', function(msg){
+    			$("#main").append("<div class='checkRequest' onClick='$(this).hide()'><p> Table "+msg.for+" Requests their check<p></div>")
+  			});
+		//});
+		
+	</script>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE HTML>
+<html>
+ <head>
+     <link rel="stylesheet" type="text/css" href="/mainpage.css">
+     <script src="/socket.io/socket.io.js"></script>
+	 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+ </head>
+ <body style="background-color:rgb(0,0,0);"><div id="all">
+     <div id="picContainer2">
+     <img src="/highhorse.jpg" id="topPic">
+     </div>
+	 <div id=fader2></div>
+	 <div id="logo">
+     <img src="/logodf.png">
+     <p style="color:white">The Finer Way To Dine</p>
+     </div>
+	 
+	 <button class="myButton" onclick="requestCheck()">
+		Ready For Check
+	 </button>
+	 <button class="myButton red" onclick="requestWaiter()">
+	 	Request Server
+	 </button>
+	 </div>
+ </body>
+<script>
+	function requestWaiter(){
+		var xhttp = new XMLHttpRequest();
+		xhttp.onreadystatechange = function() {
+		
+  };
+  xhttp.open("GET", "/serv1/"+window.location.pathname.match(/\d+/)[0], true);
+ xhttp.send();
+	}
+	
+	function requestCheck(){
+		var xhttp = new XMLHttpRequest();
+		xhttp.onreadystatechange = function() {
+		
+  };
+  xhttp.open("GET", "/check1/"+window.location.pathname.match(/\d+/)[0], true);
+  xhttp.send();
+	}
+	</script>
+</html>

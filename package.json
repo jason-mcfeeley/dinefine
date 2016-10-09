@@ -1,0 +1,17 @@
+{
+  "name": "dinefine",
+  "description": "the best waiter calling site",
+  "author": "Jason",
+  "scripts": {
+    "start": "live-server"
+  },
+  "dependencies": {
+    "live-server": "~1.1.0",
+    "express": "~4.14.0",
+    "path": "~0.12.7",
+    "socket.io": "~1.5.0",
+    "socket.io-client": "~1.5.0",
+    "http": "0.0.0"
+  },
+  "engine": "node 0.4.1"
+}
